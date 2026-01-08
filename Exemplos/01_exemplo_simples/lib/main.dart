@@ -1,18 +1,55 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Três Colunas',
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: const Text('Três Colunas'),
+          centerTitle: true,
+        ),
+        body: Row(
+          children: [
+            Expanded(
+              child: Container(
+                color: Colors.redAccent,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Coluna 1',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.greenAccent,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Coluna 2',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                color: Colors.blueAccent,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Coluna 3',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
